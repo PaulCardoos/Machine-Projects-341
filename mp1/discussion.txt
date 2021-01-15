@@ -1,0 +1,81 @@
+Paul Cardoos
+10/7
+
+1.) Initially, I tested my code using a multitude of print statements. I 
+would write one line and one print statement to see if the line worked. 
+Although, it was time consuming because I was coding in the Vi, i felt it
+was necessary because it can get confusing dealing with pointers if you 
+do not know exactly where you are in memory. 
+
+2.) If I called md for an address that does not correspond to a physical memory
+in UNIX it results in a segmentation fault. The same happens in UNIX if I call ms
+and I try to change the values of memory I dont have access too. In SPAC, if I 
+attempt these actions I get an error that says Exception 14.
+
+3a.) Unix-Tutor: The address for the test global variable xyz which has the
+the value 6 is 0804a09c and the value i get in that memory address
+with tutor is 06 00 00 00 9C A0 04 08 00 00 00 00 00 00 00. 
+
+SAPC Tutor: The addres for the test global variable xyz on the SAPC tutor is 10207c
+and the contents of that memory address is 06 00 00 00 7C 20 10 00 00 00 00 00 00 00 00
+
+3b.) Unix-Tutor: The pointer variable pxyz stores the address of xyz instead of the actual
+contents. The value of pxyz in memory is 9C A0 04 08 00 00 00 00 00 00 00 00 00
+00 00 which is the address that the global variable xyz contents are stored. 
+
+SAPC Tutor: The address for the pointer variable pxyz on the SAPC tutor is 102080 
+and the contents of that memory address is the memory address 7C 20 10 00 00 00 00
+ 00 00 00 00 00 00 00 00 which store the contents of the global variables xyz.
+
+3c.) Unix-Tutor: The address of the cmds array is 0804a060 and the value at this address is 
+04 8B 04 08 2C 88 04 08 07 8B 04 08 21 8B 04 08 which are memory addresses that store the
+contents of the cmd array. Using these addresses store in cmd array we can access the code 
+where cmd is stored and manipulate data. If you memory display at the address stored inside
+of the address at cmd arrays location. Then you can see the contents md. 
+
+SAPC Tutor: The address of the cmds array is 102080 and the value at this address is 
+40 19 10 00 83 03 10 00 43 19 10 00 5d 19 10 00 which are memory addresses that store the
+contents of the cmd array. Using these addresses store in cmd array we can access the code 
+where cmd is stored and manipulate data. If you memory display at the address stored inside
+of the address at cmd arrays location(101940). Then you can see the first contents of the cmd
+struct array.  
+
+3d.)SAPC-Tutor: The address of the cmds array is 102080 and the value at this address is 
+40 19 10 00 83 03 10 00 43 19 10 00 5d 19 10 00 which contains the address of the contents
+from the cmd array. Using this we can easily go in and manipulate data using memset. 
+Since Intel using little endian architecture the address in memory show up backwards 
+so to access the first item in cmd you need to memory display the address 101940. Using
+this I was able to easily increase the address bit by bit until I had ascii value
+73 in front which is s and memory set exactly at that address(10195d). I used the
+command ms 10195d 78 and displayed the memory at that location and saw that it was
+x. If you use this command to try and stop the program on SAPC then you get an exception 3
+which is fine and means it works.
+
+Unix Tutor:  If you follow the same steps with the addresses from 
+usyms on UNIX-tutor and type in x to end you program it will be a smooth exit, no 
+exception message.
+ 
+4.) In this question Tt means the text code and Dd is where the data is initiized 
+for the SAPC the code (Tt) starts at 100100 and end at 0010187b. In SAPC the initilized 
+data starts at 00102080 and ends at 1021e1.
+
+
+5.) When I try to change the code itself so that it crashes in my UNIX-vserver-tutor,
+I recieve a segmentation fault and the SAPC throws and exception to protect memory.
+
+6.) In the SAPC tutor the ESP register lies at memory address 5788c. When I try to 
+md that address to see what is in there there is not much. If I keep looking at the 
+address 158 (e8) bits at a time. We eventually see some text that is in the the memory.
+
+7.) Some interesting things that I have tried are changing the types of my output for
+the corresponding characters in the memory. It did not change anything much beside cause
+unnessary errors in my program. I tried to memory set about 600 bytes below the EIP
+register and when I try to memory set my name(paul) it doesnt work, but if I memory set
+an integer and then try to display that integer it works. Other interesting things I tried
+was trying to change the command for memory display from md to dm but I had difficulty doing
+this and I kept resulting in segmentation fault. I must have been doing something wrong because
+logically we should be able to do this as I was anle to do it for stop.  
+
+8.) Some other things I learned are that Intel uses little endian method and becuase of 
+this memory is display backwards. I also learned about pointers in a lot more depth that I 
+did in cs240. Actually seeing a pointer work under the helped to deepen my understanding. 

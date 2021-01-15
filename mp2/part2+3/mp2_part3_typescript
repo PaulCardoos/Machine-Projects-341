@@ -1,0 +1,122 @@
+Script started on Thu 05 Nov 2020 12:25:35 PM EST
+]0;tuser@tutor-vserver: ~/mp2/part2+3tuser@tutor-vserver:~/mp2/part2+3$ gdb strncpy.lnc[Kx
+GNU gdb (GDB) 7.0.1-debian
+Copyright (C) 2009 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i486-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /home/tuser/mp2/part2+3/strncpy.lnx...done.
+(gdb) tar rem /dev/ttyS0 
+Remote debugging using /dev/ttyS0
+0x0010022b in mystrncpy ()
+(gdb) set $eip=0x100100
+b (gdb) b mystrncpy
+Breakpoint 1 at 0x10022b
+(gdb) b leave
+Breakpoint 2 at 0x100260
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0x0010022b in mystrncpy ()
+(gdb) i reg
+eax            0x3fffb6	4194230
+ecx            0x6967c	431740
+edx            0x101648	1054280
+ebx            0x3fff56	4194134
+esp            0x3fff28	0x3fff28
+ebp            0x3fff28	0x3fff28
+esi            0x0	0
+edi            0x101d88	1056136
+eip            0x10022b	0x10022b <mystrncpy+3>
+eflags         0x216	[ PF AF IF ]
+cs             0x10	16
+ss             0x18	24
+ds             0x18	24
+es             0x18	24
+fs             0x18	24
+gs             0x18	24
+(gdb) x/c 0x3fff52
+0x3fff52:	104 'h'
+(gdb) x/c 0x3fff52[K3
+0x3fff53:	101 'e'
+(gdb) x/c 0x3fff53[K4
+0x3fff54:	121 'y'
+(gdb) x/c 0x3fff54[K5
+0x3fff55:	104 'h'
+(gdb) x/c 0x3fff55[K6
+0x3fff56:	101 'e'
+(gdb) x/c 0x3fff56[K7
+0x3fff57:	121 'y'
+(gdb) x/c 0x3fff57[K8
+0x3fff58:	80 'P'
+(gdb) x/c 0x3fff58[K9
+0x3fff59:	97 'a'
+(gdb) x/c 0x3fff59[K1[Ka
+0x3fff5a:	117 'u'
+(gdb) x/c 0x3fff5a[Kb
+0x3fff5b:	108 'l'
+(gdb) x/c 0x3fff5b[K[K[K[K[K[K[K[K[K[K[K[Kc
+Continuing.
+
+Breakpoint 2, 0x00100260 in leave ()
+(gdb) ni
+0x00100262 in leave ()
+(gdb) ni
+0x00100264 in leave ()
+(gdb) i reg
+eax            0x3fffb6	4194230
+ecx            0x6	6
+edx            0xa	10
+ebx            0x3fff58	4194136
+esp            0x3fff28	0x3fff28
+ebp            0x3fff28	0x3fff28
+esi            0x0	0
+edi            0x3fffb6	4194230
+eip            0x100264	0x100264 <leave+4>
+eflags         0x346	[ PF ZF TF IF ]
+cs             0x10	16
+ss             0x18	24
+ds             0x18	24
+es             0x18	24
+fs             0x18	24
+gs             0x18	24
+(gdb) display $eax
+1: $eax = 4194230
+(gdb) x/c $eax
+0x3fffb6:	104 'h'
+(gdb) x/c $eax[K[K[K[K[K[K[K $eax
+0x3fffb6:	104 'h'
+(gdb) x $eax[K[K[K[K0x3fffb7
+0x3fffb7:	101 'e'
+(gdb) x 0x3fffb7[K8][K
+0x3fffb8:	121 'y'
+(gdb) x 0x3fffb8[K9
+0x3fffb9:	104 'h'
+(gdb) x 0x3fffb9[Ka
+0x3fffba:	101 'e'
+(gdb) x 0x3fffba[Kb
+0x3fffbb:	121 'y'
+(gdb) x 0x3fffbb[Kc
+0x3fffbc:	0 '\000'
+(gdb) x 0x3fffbc[K[K[K[K[K[K[K[K[K[Kc
+Continuing.
+
+Program received signal SIGTRAP, Trace/breakpoint trap.
+_startupc () at startup.c:7
+7	startup.c: No such file or directory.
+	in startup.c
+1: $eax = 0
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [Remote target] will be killed.
+
+Quit anyway? (y or n) y
+]0;tuser@tutor-vserver: ~/mp2/part2+3tuser@tutor-vserver:~/mp2/part2+3$ gdb strncpy.lnxexit[K
+exit
+
+Script done on Thu 05 Nov 2020 12:30:38 PM EST

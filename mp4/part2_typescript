@@ -1,0 +1,84 @@
+Script started on Tue 01 Dec 2020 11:39:02 PM EST
+tuser@tutor-vserver:~$ mtip -f measure.lnxgcc -o charGen charGen.c[5Pmtip -f measure.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+Please type <CR> to confirm console setting: 
+Setting console dev to COM2Console: colour EGA+ 80x25
+COM1 at 0x03f8 (irq = 4) is a 16550A
+COM2 at 0x02f8 (irq = 3) is a 16550A
+
+                 Welcome to UMB Tutor for the PC
+   UMB Tutor is a 32-bit protected-mode PC debugger/downloader,
+       based on Linux, UMB Tutor for m68k, and remote gdb.
+UMB Tutor is free software and you are welcome to distribute copies
+of it under certain conditions.  There is no warranty for this program.
+The copyright and warranty provisions follow the Gnu general public
+license, available for view in gdb and elsewhere.  Full sources available.
+--bugs, suggestions, questions to eoneil@cs.umb.edu
+
+Exception 3 at EIP=00057a9b: Breakpoint
+Tutor> ~downloading measure.lnx
+
+.......Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+Calling set_intr_gate (irq = 3, n = 0x23) to arm interrupt...
+Commanding PIC to interrupt CPU for irq 3 (COM2_IRQ)
+enabling receiver interrupts in UART...
+...done, entering almost-infinite loop
+
+time interval = 6116128 us for charA
+time interval = 1001028 us for charB
+time interval = 997825 us for charC
+time interval = 993188 us for charD
+time interval = 1001837 us for charE
+time interval = 1008491 us for charF
+time interval = 991683 us for charG
+time interval = 997298 us for char0
+time interval = 2060409 us for char1
+time interval = 1995989 us for char2
+time interval = 1996116 us for char3
+time interval = 2000250 us for char4
+time interval = 2001296 us for char5
+time interval = 1995955 us for char6
+time interval = 2000214 us for chara
+time interval = 2993953 us for charb
+time interval = 3001620 us for charc
+time interval = 2998918 us for chard
+time interval = 3062160 us for chare
+time interval = 2991840 us for charf
+time interval = 2998394 us for charg
+time interval = 2998097 us for charM
+time interval = 67381 us for charN
+time interval = 69194 us for charO
+time interval = 70333 us for charP
+time interval = 65478 us for charQ
+time interval = 67910 us for charR
+time interval = 130052 us for charS
+time interval = 61621 us for char0
+time interval = 85502 us for char1
+time interval = 81200 us for char2
+time interval = 71589 us for char3
+time interval = 133567 us for char4
+time interval = 83833 us for char5
+time interval = 78066 us for char6
+time interval = 80485 us for charm
+time interval = 87585 us for charn
+time interval = 90045 us for charo
+time interval = 87349 us for charp
+time interval = 89511 us for charq
+time interval = 91004 us for charr
+time interval = 91078 us for charsus for charSuspend handler: Suspending mtip, board #1--please return to it (fg command) as soon as possible
+
+[1]+  Stopped                 mtip -f measure.lnx
+tuser@tutor-vserver:~$ exit
+exit
+There are stopped jobs.
+tuser@tutor-vserver:~$ exit
+exit
+Continuing mtip on board 1
+
+Script done on Tue 01 Dec 2020 11:40:58 PM EST

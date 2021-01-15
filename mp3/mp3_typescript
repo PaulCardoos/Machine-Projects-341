@@ -1,0 +1,50 @@
+Script started on Tue 17 Nov 2020 01:49:10 AM EST
+tuser@tutor-vserver:~$ rm echo.lnx[5@mtip -f[C[C[C[C[C[C[C[C[Cscp darkdeer@users.cs.umb.edu:cs341/mp3/echo.lnx .[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmtip -f echo.lnx[K
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+Please type <CR> to confirm console setting: 
+Setting console dev to COM2Console: colour EGA+ 80x25
+COM1 at 0x03f8 (irq = 4) is a 16550A
+COM2 at 0x02f8 (irq = 3) is a 16550A
+
+                 Welcome to UMB Tutor for the PC
+   UMB Tutor is a 32-bit protected-mode PC debugger/downloader,
+       based on Linux, UMB Tutor for m68k, and remote gdb.
+UMB Tutor is free software and you are welcome to distribute copies
+of it under certain conditions.  There is no warranty for this program.
+The copyright and warranty provisions follow the Gnu general public
+license, available for view in gdb and elsewhere.  Full sources available.
+--bugs, suggestions, questions to eoneil@cs.umb.edu
+
+Exception 3 at EIP=00057a9b: Breakpoint
+Tutor> ~downloading echo.lnx
+
+.......Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+Type escape character and enter
+z
+abczException 3 at EIP=00100110: Breakpoint
+Tutor> go 100100
+Type escape character and enter
+z
+abcdexyzException 3 at EIP=00100110: Breakpoint
+Tutor> go 100100
+Type escape character and enter
+z
+abcde
+xyzException 3 at EIP=00100110: Breakpoint
+Tutor> Suspend handler: Suspending mtip, board #1--please return to it (fg command) as soon as possible
+
+[1]+  Stopped                 mtip -f echo.lnx
+tuser@tutor-vserver:~$ exit
+exit
+There are stopped jobs.
+tuser@tutor-vserver:~$ exit
+exit
+Continuing mtip on board 1
+
+Script done on Tue 17 Nov 2020 01:51:37 AM EST

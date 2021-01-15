@@ -1,0 +1,62 @@
+Script started on Thu 08 Oct 2020 03:30:36 PM EDT
+tuser@tutor-vserver:~$ script[4Plsmake cleanssh darkdeer@users.cs.umb.edu[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krm tutor.*ypescriptls[Kexitmtip -f tutor.lnxscp darkdeer@users.cs.umb.edu:cs341/mp1/tutor.* .
+darkdeer@users.cs.umb.edu's password: 
+tutor.c                                         0%    0     0.0KB/s   --:-- ETAtutor.c                                       100% 2321     2.3KB/s   00:00    
+tutor.lnx                                       0%    0     0.0KB/s   --:-- ETAtutor.lnx                                     100%   24KB  24.5KB/s   00:00    
+tutor.o                                         0%    0     0.0KB/s   --:-- ETAtutor.o                                       100% 3844     3.8KB/s   00:00    
+tuser@tutor-vserver:~$ scp darkdeer@users.cs.umb.edu:cs341/mp1/tutor.* .[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cript[K[4Plsmake cleanssh darkdeer@users.cs.umb.edu[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krm tutor.*ypescriptls[Kexitmtip -f tutor.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+Please type <CR> to confirm console setting: ~downloading tutor.lnx
+.........Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+     cmd    help message
+      md    Memory display: MD <addr>
+       s    Stop
+       h    Help: h <cmd>
+      ms    Memory set: MS <hex_addr> <new_val>
+PC-tutor> md 1020bc
+06 00 00 00 bc 20 10 00 00 00 00 00 00 00 00 00 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+PC-tutor> ms 1020bc 11
+PC-tutor> md 1020bc
+11 00 00 00 bc 20 10 00 00 00 00 00 00 00 00 00 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+PC-tutor> h md
+Memory Display: md <addrs>
+PC-tutor> h ms
+Memory Set: ms <addrs> <val>
+PC-tutor> h s
+Stop
+PC-tutor> h
+Memory Display: md <addrs>
+Memory Set: <addrs> <val>
+s: Stop
+Help: h <cmd>
+PC-tutor> md 1019f
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+PC-tutor> md 10195d
+73 00 53 74 6f 70 00 68 00 48 65 6c 70 3a 20 68 
+s  . S t o p  . h  . H e l p :  . h 
+PC-tutor> ms 10195d 78
+PC-tutor> md 10195d
+78 00 53 74 6f 70 00 68 00 48 65 6c 70 3a 20 68 
+x  . S t o p  . h  . H e l p :  . h 
+PC-tutor> x
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> Suspend handler: Suspending mtip, board #1--please return to it (fg command) as soon as possible
+
+[1]+  Stopped                 mtip -f tutor.lnx
+tuser@tutor-vserver:~$ exit
+exit
+There are stopped jobs.
+tuser@tutor-vserver:~$ exit
+exit
+Continuing mtip on board 1
+
+Script done on Thu 08 Oct 2020 03:33:31 PM EDT
